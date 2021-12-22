@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Battery Manager"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/inner_circle_bg"
+        android:padding="16dp"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toTopOf="@+id/gl_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/inner_circle_bg"
+            android:padding="16dp"
+            app:layout_constraintDimensionRatio="w,1:1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/inner_circle_bg_last"
+                android:elevation="8dp"
+                android:gravity="center"
+                android:padding="60dp"
+                app:layout_constraintDimensionRatio="w,1:1">
+
+                <ImageView
+                    android:id="@+id/iv_ic_battery"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_fully_charged" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_battery_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawableStart="@drawable/ic_battery_health"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Good"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintStart_toStartOf="@+id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/tv_battery_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/ic_battery"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/montserrat"
+        android:text="50%"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tv_battery_status"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/gl_start"
+        app:layout_constraintTop_toBottomOf="@+id/tv_battery_health" />
+
+    <TextView
+        android:id="@+id/tv_battery_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/ic_status"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Charging"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_battery_percent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_battery_health" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
